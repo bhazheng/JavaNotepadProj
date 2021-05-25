@@ -36,6 +36,11 @@ public class textEditor extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 editorPane1.setText("");
+                label.setIcon(null);
+                editorPane1.setBackground(Color.white);
+                editorPane1.setForeground(Color.black);
+                spinner1.setValue(20);
+                System.out.println("clear");
             }
         });
         saveButton.addActionListener(new ActionListener() {
