@@ -15,8 +15,8 @@ public class textEditor extends JFrame{
     private JComboBox fontBox;
     private JTextArea editorPane1;
     private JButton fontColorButton;
-    private JButton button1;
-    private JSpinner spinner1;
+    private JButton backgroundColor;
+    private JSpinner fontSize;
     private JButton button2;
     private JLabel label;
 
@@ -39,7 +39,7 @@ public class textEditor extends JFrame{
                 label.setIcon(null);
                 editorPane1.setBackground(Color.white);
                 editorPane1.setForeground(Color.black);
-                spinner1.setValue(20);
+                fontSize.setValue(20);
                 System.out.println("clear");
             }
         });
@@ -108,7 +108,7 @@ public class textEditor extends JFrame{
 
             }
         });
-        button1.addActionListener(new ActionListener() {
+        backgroundColor.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JColorChooser colorChooser = new JColorChooser();
@@ -119,11 +119,11 @@ public class textEditor extends JFrame{
             }
         });
 
-        spinner1.setValue(20);
-        spinner1.addChangeListener(new ChangeListener() {
+        fontSize.setValue(20);
+        fontSize.addChangeListener(new ChangeListener() {
             @Override
             public void stateChanged(ChangeEvent e) {
-                editorPane1.setFont(new Font(editorPane1.getFont().getFamily(),Font.PLAIN,(int) spinner1.getValue()));
+                editorPane1.setFont(new Font(editorPane1.getFont().getFamily(),Font.PLAIN,(int) fontSize.getValue()));
             }
         });
 
