@@ -140,7 +140,7 @@ public class textEditor extends JFrame{
 
                 //Limit type of file name extensions supported.
 
-                FileNameExtensionFilter filter = new FileNameExtensionFilter("4 Extensions Supported", "jpg", "png", "jpeg", "gif");
+                FileNameExtensionFilter filter = new FileNameExtensionFilter("3 Extensions Supported", "jpg", "png", "jpeg");
 
                 fileChooser.setFileFilter(filter);
 
