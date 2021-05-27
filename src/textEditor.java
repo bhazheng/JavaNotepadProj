@@ -17,10 +17,12 @@ public class textEditor extends JFrame{
     private JButton fontColorButton;
     private JButton backgroundColor;
     private JSpinner fontSize;
-    private JButton button2;
+    private JButton imgButton;
     private JLabel label;
 
     public textEditor() {
+
+        //method untuk jframe
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setTitle("Text Editor");
         this.setContentPane(GUI);
@@ -29,9 +31,11 @@ public class textEditor extends JFrame{
         this.setVisible(true);
         this.setLocationRelativeTo(null);
 
-        String[] fonts = GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames();
-        fontBox.setModel(new DefaultComboBoxModel(fonts));
+        //method default text area
+        editorPane1.setFont(new Font("Arial", Font.PLAIN,20));
 
+
+        //method untuk clear button
         clearButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -43,6 +47,8 @@ public class textEditor extends JFrame{
                 System.out.println("clear");
             }
         });
+
+        //method untuk save file txt
         saveButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -64,6 +70,8 @@ public class textEditor extends JFrame{
                 }
             }
         });
+
+        //method untuk membuka file txt
         loadButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -97,6 +105,7 @@ public class textEditor extends JFrame{
             }
         });
 
+        //method untuk mengubah warna font
         fontColorButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -108,6 +117,8 @@ public class textEditor extends JFrame{
 
             }
         });
+
+        //method untuk mengubah background text area
         backgroundColor.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -119,6 +130,7 @@ public class textEditor extends JFrame{
             }
         });
 
+        //method untuk mengatur font size
         fontSize.setValue(20);
         fontSize.addChangeListener(new ChangeListener() {
             @Override
@@ -127,13 +139,18 @@ public class textEditor extends JFrame{
             }
         });
 
+        //method untuk mengubah jenis font
+        String[] fonts = GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames();
+        fontBox.setModel(new DefaultComboBoxModel(fonts));
         fontBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 editorPane1.setFont(new Font((String)fontBox.getSelectedItem(),Font.PLAIN,editorPane1.getFont().getSize()));
             }
         });
-        button2.addActionListener(new ActionListener() {
+
+        //method untuk menambahkan gambar di Jlabel
+        imgButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFileChooser fileChooser = new JFileChooser();
